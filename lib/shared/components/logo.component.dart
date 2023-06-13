@@ -11,8 +11,7 @@ class LogoComponent extends StatelessWidget {
   });
 
   /// Will build the logo with just the icon in it's default size (32)
-  factory LogoComponent.justIcon() =>
-      const LogoComponent(hasText: false);
+  factory LogoComponent.justIcon() => const LogoComponent(hasText: false);
 
   final double iconSize;
   final double textSize;
@@ -28,7 +27,10 @@ class LogoComponent extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             'motorsweb',
-            style: GoogleFonts.comfortaa(fontWeight: FontWeight.w900),
+            style: GoogleFonts.comfortaa(
+              fontWeight: FontWeight.w900,
+              fontSize: textSize,
+            ),
           ),
         ],
       );
