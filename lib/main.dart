@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'home_module/pages/home.page.dart';
 import 'shared/singletons/colors.singleton.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
           seedColor: MotorsColors.accentRed,
           background: MotorsColors.lightGreyBackground,
         ),
+        fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
       ),
       home: const HomePage(),

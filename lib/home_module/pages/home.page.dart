@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:motors_web/home_module/shared/aggregators/menu_entry.aggregator.dart';
 import 'package:motors_web/home_module/shared/components/custom_app_bar.component.dart';
+import 'package:motors_web/home_module/shared/components/search_box.component.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,8 +35,8 @@ class HomePage extends StatelessWidget {
           ),
           Expanded(
             child: ListView(
-              children: <Widget>[
-                Container(),
+              children: const <Widget>[
+                SearchBoxComponent(),
               ],
             ),
           ),
@@ -49,13 +50,13 @@ class HomePage extends StatelessWidget {
                 icon: const Icon(Icons.close),
                 onPressed: () => Scaffold.of(insideContext).closeDrawer(),
               ),
-              Text('Custom Menu Entry'),
-              Text('Custom Menu Entry'),
-              Text('Custom Menu Entry'),
-              Text('Custom Menu Entry'),
-              Text('Custom Menu Entry'),
-              Text('Custom Menu Entry'),
-              Text('Custom Menu Entry'),
+              const Text('Custom Menu Entry'),
+              const Text('Custom Menu Entry'),
+              const Text('Custom Menu Entry'),
+              const Text('Custom Menu Entry'),
+              const Text('Custom Menu Entry'),
+              const Text('Custom Menu Entry'),
+              const Text('Custom Menu Entry'),
             ],
           ),
         ),

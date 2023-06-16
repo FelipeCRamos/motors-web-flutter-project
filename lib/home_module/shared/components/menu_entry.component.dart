@@ -10,6 +10,9 @@ class MenuEntry extends StatelessWidget {
     this.padding = 16,
     this.noLeftPadding = false,
     this.noRightPadding = false,
+    this.textStyle,
+    this.selectedTextStyle,
+    this.indicatorHeight = 2,
   });
 
   final String text;
@@ -17,9 +20,21 @@ class MenuEntry extends StatelessWidget {
   final double padding;
   final bool noLeftPadding;
   final bool noRightPadding;
+  final double indicatorHeight;
+
+  final TextStyle? textStyle;
+  final TextStyle? selectedTextStyle;
 
   @override
   Widget build(BuildContext context) {
+    final TextStyle defaultTextStyle = GoogleFonts.poppins(
+      fontWeight: FontWeight.w500,
+      color: MotorsColors.darkGrey,
+      fontSize: 12,
+    );
+
+    final TextStyle defaultSelectedTextStyle = defaultTextStyle.copyWith();
+
     return Container(
       height: MediaQuery.of(context).size.height,
       alignment: Alignment.center,
@@ -30,17 +45,18 @@ class MenuEntry extends StatelessWidget {
       decoration: isSelected
           ? BoxDecoration(
               border: Border(
-                bottom: BorderSide(color: MotorsColors.accentRed, width: 2),
+                bottom: BorderSide(
+                  color: MotorsColors.accentRed,
+                  width: indicatorHeight,
+                ),
               ),
             )
           : null,
       child: Text(
         text,
-        style: GoogleFonts.poppins(
-          fontWeight: FontWeight.w500,
-          color: MotorsColors.darkGrey,
-          fontSize: 12,
-        ),
+        style: isSelected
+            ? selectedTextStyle ?? defaultSelectedTextStyle
+            : textStyle ?? defaultTextStyle,
       ),
     );
   }
